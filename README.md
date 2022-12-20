@@ -6,7 +6,7 @@ This playbook installs the following
 * [Docker](https://www.docker.com) 5:20.10.21\~3-0~ubuntu-focal
 * [Go](https://go.dev) 1.19.3
 * [Singularity](https://sylabs.io/singularity) v3.10.4
-* [Miniconda] (https://docs.conda.io/en/latest/miniconda.html) 4.12.0
+* [Miniconda](https://docs.conda.io/en/latest/miniconda.html) 4.12.0
 
 It is designed to run on a clean Ubuntu 20.04 server (i.e. a server on which nextflow etc. have not yet been installed).
 
