@@ -1,0 +1,13 @@
+---
+
+home: "{{ lookup('env','HOME') }}"
+
+nextflow_version: 22.10.4
+
+singularity_version: v3.10.4
+
+go_version: 1.19.3
+
+docker_version: 5:20.10.21~3-0~ubuntu-focal
+
+miniconda_version: 4.12.0

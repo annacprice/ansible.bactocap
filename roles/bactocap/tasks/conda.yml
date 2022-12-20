@@ -1,0 +1,22 @@
+---
+- name: conda | grab miniconda installer
+  get_url: url=https://repo.anaconda.com/miniconda/Miniconda3-py39_{{ miniconda_version }}-Linux-x86_64.sh dest=/tmp/miniconda.sh mode=0755
+
+- name: conda | install conda
+  command: /tmp/miniconda.sh -b
+  become: false
+
+- name: conda | add conda to PATH
+  lineinfile: path="~/.bashrc" line="export PATH={{ home }}/miniconda3/bin:$PATH"
+
+- name: conda | add extra conda channels
+  command: "{{ home }}/miniconda3/bin/conda config --add channels bioconda"
+
+- name: conda | install mamba
+  command: "{{ home }}/miniconda3/bin/conda install -n base -c conda-forge mamba -y"
+
+- name: conda | intialise conda
+  command: "{{ home }}/miniconda3/bin/conda init bash"
+
+- name: conda | prevent conda activating base by default
+  command: "{{ home }}/miniconda3/bin/conda config --set auto_activate_base false"
