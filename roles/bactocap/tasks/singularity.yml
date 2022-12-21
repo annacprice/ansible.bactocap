@@ -8,6 +8,9 @@
       - libgpgme11-dev
       - squashfs-tools
       - libseccomp-dev
+      - libglib2.0-dev
+      - cryptsetup
+      - runc
   become: true
 
 - name: singularity | grab installer for go
